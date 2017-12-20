@@ -1,0 +1,13 @@
+{
+  "name": "coffee-phonecat",
+  "description": "A starter project for AngularJS - a la coffeescript",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pshealth/coffee-phonecat",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.28",
+    "jquery": ">=1.11.3",
+    "bootstrap": "~3.1.1"
+  }
+}
