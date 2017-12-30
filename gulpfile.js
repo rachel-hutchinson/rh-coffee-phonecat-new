@@ -18,6 +18,12 @@ gulp.task('json', function() {
   .pipe(gulp.dest('release/phones'));
 });
 
+gulp.task('img', function() {
+  return gulp.src(['app/img/**/*'])
+  .pipe(gulp.dest('release/img'));
+});
+
+
 gulp.task('javascripts', function() {
   src = mainBowerFiles({filter: new RegExp('.js$')});
 
@@ -52,7 +58,7 @@ gulp.task('webserver', [], function() {
   });
 });
 
-gulp.task('assets', ['clean', 'json', 'javascripts', 'html']);
+gulp.task('assets', ['clean', 'json', 'img', 'javascripts', 'html']);
 
 gulp.task('default', ['assets'], function(){
   gulp.start('watch');
