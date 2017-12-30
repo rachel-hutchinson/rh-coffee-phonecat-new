@@ -2,11 +2,16 @@
 
 ### Controllers ###
 
-phonecatApp = angular.module('phonecatApp', [])
+phonecatControllers = angular.module('phonecatControllers', [])
 
-phonecatApp.controller 'PhoneListCtrl', ($scope, $http) ->
+phonecatControllers.controller 'PhoneListCtrl', ($scope, $http) ->
   $http.get('phones/phones.json')
   .then (httpresponse) ->
-    $scope.phones = httpresponse.data.splice(0, 5)
+    $scope.phones = httpresponse.data
 
   $scope.orderProp = 'age'
+
+phonecatControllers.controller 'PhoneDetailCtrl', ($scope, $routeParams) ->
+  $scope.phoneId = $routeParams.phoneId
+
+  
