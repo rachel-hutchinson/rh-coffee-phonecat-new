@@ -13,6 +13,11 @@ gulp.task('clean', function(cb) {
   cb();
 });
 
+gulp.task('json', function() {
+  return gulp.src(['app/phones/*'])
+  .pipe(gulp.dest('release/phones'));
+});
+
 gulp.task('javascripts', function() {
   src = mainBowerFiles({filter: new RegExp('.js$')});
 
@@ -47,7 +52,7 @@ gulp.task('webserver', [], function() {
   });
 });
 
-gulp.task('assets', ['clean', 'javascripts', 'html']);
+gulp.task('assets', ['clean', 'json', 'javascripts', 'html']);
 
 gulp.task('default', ['assets'], function(){
   gulp.start('watch');
