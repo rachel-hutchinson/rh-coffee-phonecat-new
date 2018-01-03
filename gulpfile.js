@@ -23,6 +23,10 @@ gulp.task('img', function() {
   .pipe(gulp.dest('release/img'));
 });
 
+gulp.task('partials', function() {
+  return gulp.src(['app/partials/**/*'])
+  .pipe(gulp.dest('release/partials'));
+});
 
 gulp.task('javascripts', function() {
   src = mainBowerFiles({filter: new RegExp('.js$')});
@@ -58,7 +62,7 @@ gulp.task('webserver', [], function() {
   });
 });
 
-gulp.task('assets', ['clean', 'json', 'img', 'javascripts', 'html']);
+gulp.task('assets', ['clean', 'json', 'img', 'partials', 'javascripts', 'html']);
 
 gulp.task('default', ['assets'], function(){
   gulp.start('watch');
