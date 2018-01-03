@@ -10,7 +10,13 @@
 <body ng-controller="PhoneListCtrl">
 
   <div ng-view></div>
-  index order prop: {{orderProp}}
+  index order prop: {{orderProp}}<br>
+
+  {{ "lower cap string" | uppercase }} <br>
+  {{ {foo: "bar", baz: 23} | json }}<br>
+  {{ 1304375948024 | date }}<br>
+  {{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}<br>
+  <input ng-model="userInput"> Uppercased: {{ userInput | uppercase }}
 
 </body>
 </html>

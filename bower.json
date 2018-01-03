@@ -1,8 +1,8 @@
 {
-  "name": "rh-coffee-phonecat-new",
+  "name": "coffee-phonecat",
   "description": "A starter project for AngularJS - a la coffeescript",
   "version": "0.0.0",
-  "homepage": "https://github.com/rachel-hutchinson/rh-coffee-phonecat-new",
+  "homepage": "https://github.com/pshealth/coffee-phonecat",
   "license": "MIT",
   "private": true,
   "dependencies": {
