@@ -15,4 +15,11 @@ phonecatControllers.controller 'PhoneDetailCtrl', ($scope, $routeParams, $http) 
   $http.get('phones/' + $routeParams.phoneId + '.json')
   .then (httpresponse) ->
       $scope.phone = httpresponse.data
+      $scope.mainImageUrl = httpresponse.data.images[0]
+
+  $scope.setImage = (imageUrl) ->
+    $scope.mainImageUrl = imageUrl
+
+  $scope.hello = (name) ->
+      alert('Hello ' + (name|| 'world') + '!')
 
