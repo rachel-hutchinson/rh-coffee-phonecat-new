@@ -11,7 +11,8 @@ phonecatControllers.controller 'PhoneListCtrl', ($scope, $http) ->
 
   $scope.orderProp = 'age'
 
-phonecatControllers.controller 'PhoneDetailCtrl', ($scope, $routeParams) ->
-  $scope.phoneId = $routeParams.phoneId
+phonecatControllers.controller 'PhoneDetailCtrl', ($scope, $routeParams, $http) ->
+  $http.get('phones/' + $routeParams.phoneId + '.json')
+  .then (httpresponse) ->
+      $scope.phone = httpresponse.data
 
-  

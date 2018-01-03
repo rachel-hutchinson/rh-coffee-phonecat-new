@@ -50,7 +50,8 @@ gulp.task('html', function() {
 
 gulp.task('watch', [], function() {
   gulp.watch(['./app/js/*', '!./app/js/*~'], ['javascripts']);
-  gulp.watch(['./app/*.html', '!./app/*.html~'], ['html'])
+  gulp.watch(['./app/*.html', '!./app/*.html~'], ['html']);
+  gulp.watch(['./app/partials/*', '!./app/partials/*~'], ['partials']);
 });
 
 gulp.task('webserver', [], function() {
