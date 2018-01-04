@@ -23,3 +23,8 @@ phonecatControllers.controller 'PhoneDetailCtrl', ($scope, $routeParams, $http) 
   $scope.hello = (name) ->
       alert('Hello ' + (name|| 'world') + '!')
 
+phonecatControllers.controller 'BooksCtrl', ($scope) ->
+  $scope.title = 'Books'
+  $scope.range = [0,1,2,3,4]
+    # return new Array(n)
+        

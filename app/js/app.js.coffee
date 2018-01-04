@@ -21,6 +21,11 @@ phonecatApp.config ['$routeProvider', ($routeProvider) ->
       controller: 'PhoneDetailCtrl'
     )
 
+    .when('/books',
+      templateUrl: 'partials/books.html'
+      controller: 'BooksCtrl'
+    )
+    
     .otherwise redirectTo: '/phones'
     return
 ]
