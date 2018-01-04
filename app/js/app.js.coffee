@@ -6,6 +6,7 @@ phonecatApp = angular.module('phonecatApp', [
   'ngRoute'
   'phonecatControllers'
   'phonecatFilters'
+  'phonecatServices'
 ])
 
 phonecatApp.config ['$routeProvider', ($routeProvider) ->
@@ -21,11 +22,6 @@ phonecatApp.config ['$routeProvider', ($routeProvider) ->
       controller: 'PhoneDetailCtrl'
     )
 
-    .when('/books',
-      templateUrl: 'partials/books.html'
-      controller: 'BooksCtrl'
-    )
-    
     .otherwise redirectTo: '/phones'
     return
 ]

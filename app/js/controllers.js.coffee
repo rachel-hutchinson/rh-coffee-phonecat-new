@@ -4,27 +4,15 @@
 
 phonecatControllers = angular.module('phonecatControllers', [])
 
-phonecatControllers.controller 'PhoneListCtrl', ($scope, $http) ->
-  $http.get('phones/phones.json')
-  .then (httpresponse) ->
-    $scope.phones = httpresponse.data
-
+phonecatControllers.controller 'PhoneListCtrl', ($scope, Phone) ->
+  $scope.phones    = Phone.query()
   $scope.orderProp = 'age'
 
-phonecatControllers.controller 'PhoneDetailCtrl', ($scope, $routeParams, $http) ->
-  $http.get('phones/' + $routeParams.phoneId + '.json')
-  .then (httpresponse) ->
-      $scope.phone = httpresponse.data
-      $scope.mainImageUrl = httpresponse.data.images[0]
+phonecatControllers.controller 'PhoneDetailCtrl', ($scope, $routeParams, Phone) ->
+  $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, (phone) ->
+    $scope.mainImageUrl = phone.images[0]
+  )
 
   $scope.setImage = (imageUrl) ->
     $scope.mainImageUrl = imageUrl
 
-  $scope.hello = (name) ->
-      alert('Hello ' + (name|| 'world') + '!')
-
-phonecatControllers.controller 'BooksCtrl', ($scope) ->
-  $scope.title = 'Books'
-  $scope.range = [0,1,2,3,4]
-    # return new Array(n)
-        
